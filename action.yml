@@ -1,15 +1,12 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'JUnit Platform Console Launcher'
+description: 'Download and start the JUnit Platform Console Launcher'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  version: # id of input
+    description: 'Version of the JUnit Platform'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+    default: '1.6.0-RC1'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.version }}
