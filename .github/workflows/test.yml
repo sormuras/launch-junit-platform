@@ -16,4 +16,4 @@ jobs:
     - run: java -version
     - uses: ./
       id: junit
-    - run: java -jar ${{ junit.standalone-jar }} --help
+    - run: java -jar ${{ steps.junit.outputs.standalone-jar }} --help
