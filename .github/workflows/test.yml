@@ -13,5 +13,7 @@ jobs:
     - uses: actions/setup-java@v1
       with:
         java-version: ${{ matrix.java }}
-    - uses: ./
     - run: java -version
+    - uses: ./
+      id: junit
+    - run: java -jar ${{ junit.standalone-jar }} --help
