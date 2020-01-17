@@ -5,6 +5,9 @@ inputs:
     description: 'Version of the JUnit Platform'
     required: true
     default: '1.6.0-RC1'
+outputs:
+  standalone-jar:
+    description: 'The path of the downloaded JUnit Platform Console Standalone JAR file'
 runs:
   using: 'docker'
   image: 'Dockerfile'
