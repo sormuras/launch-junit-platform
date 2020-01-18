@@ -17,12 +17,10 @@ The path of the downloaded JUnit Platform Console Standalone JAR file.
 ## Example usage
 
 ```yaml
-- uses: actions/setup-java@v1
-  with:
-    java-version: 11
 - uses: sormuras/setup-junit@master
   id: junit
   with:
     platform-version: '1.6.0-RC1'
+- uses: actions/setup-java@v1
 - run: java -jar ${{ steps.junit.outputs.standalone-jar }} --help
 ```
