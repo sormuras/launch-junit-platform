@@ -1,11 +1,10 @@
 #!/bin/sh -l
 
-VERSION=$1
+PLATFORM_VERSION=$1
+STANDALONE_JAR=junit-platform-console-standalone-${PLATFORM_VERSION}.jar
 
-echo "Download JUnit Platform Console Standalone ${VERSION}..."
+echo "Download ${STANDALONE_JAR}..."
 
-JAR=junit-platform-console-standalone-${VERSION}.jar
-JAR_PATH="/home/runner/work/_temp/_github_home/${JAR}"
-wget https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/${VERSION}/${JAR} --output-document ${HOME}/${JAR}
+wget https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/${PLATFORM_VERSION}/${STANDALONE_JAR} --output-document ${HOME}/${STANDALONE_JAR}
 
-echo ::set-output name=standalone-jar::${JAR_PATH}
+echo ::set-output name=standalone-jar::"/home/runner/work/_temp/_github_home/${STANDALONE_JAR}"
