@@ -1,23 +1,28 @@
-# Hello world docker action
+# JUnit Platform Console Launcher action
 
-This action prints "Hello World" to the log or "Hello" + the name of a person to greet. To learn how this action was built, see "[Creating a Docker container action](https://help.github.com/en/articles/creating-a-docker-container-action)" in the GitHub Help documentation.
+This action downloads the JUnit Platform Console launcher.
 
 ## Inputs
 
-### `who-to-greet`
+### `platform-version`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** The version of the JUnit Platform Console to load. Default `"1.6.0-RC1"`.
 
 ## Outputs
 
-### `time`
+### `standalone-jar`
 
-The time we greeted you.
+The path of the downloaded JUnit Platform Console Standalone JAR file.
 
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-docker-action@master
-with:
-  who-to-greet: 'Mona the Octocat'
+- uses: actions/setup-java@v1
+  with:
+    java-version: 11
+- uses: sormuras/setup-junit@master
+  id: junit
+  with:
+    platform-version: '1.6.0-RC1'
+- run: java -jar ${{ steps.junit.outputs.standalone-jar }} --help
 ```
