@@ -1,8 +1,8 @@
 name: 'JUnit Platform Console Launcher'
 description: 'Download and start the JUnit Platform Console Launcher'
 inputs:
-  version: # id of input
-    description: 'Version of the JUnit Platform'
+  platform-version:
+    description: 'Version of the JUnit Platform modules and standalone artifact'
     required: true
     default: '1.6.0-RC1'
 outputs:
