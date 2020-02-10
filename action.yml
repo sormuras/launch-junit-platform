@@ -4,7 +4,7 @@ inputs:
   platform-version:
     description: 'Version of the JUnit Platform modules and standalone artifact'
     required: true
-    default: '1.6.0-RC1'
+    default: '1.6.0'
 outputs:
   standalone-jar:
     description: 'The path of the downloaded JUnit Platform Console Standalone JAR file'

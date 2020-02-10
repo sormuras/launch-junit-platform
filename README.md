@@ -6,7 +6,7 @@ This action downloads the JUnit Platform Console launcher.
 
 ### `platform-version`
 
-**Required** The version of the JUnit Platform Console to load. Default `"1.6.0-RC1"`.
+**Required** The version of the JUnit Platform Console to load. Default `"1.6.0"`.
 
 ## Outputs
 
@@ -20,7 +20,7 @@ The path of the downloaded JUnit Platform Console Standalone JAR file.
 - uses: sormuras/setup-junit@master
   id: junit
   with:
-    platform-version: '1.6.0-RC1'
+    platform-version: '1.6.0'
 - uses: actions/setup-java@v1
 - run: java -jar ${{ steps.junit.outputs.standalone-jar }} --help
 ```
